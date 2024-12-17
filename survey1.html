@@ -4,43 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="survey1.js" defer></script>
-    <title>Survey Penelitian</title>
+    <title>Survey Konsumen</title>
 </head>
 <body style="background-color:bisque;">
     <p style="font:bold 36px 'Arial', sans-serif; color: black;">Survey Penelitian</p>
-    <form onsubmit="submitSurvey()">
+    <form id="formSurvey" onsubmit="submitSurvey(event)">
         <label for="name">Nama</label> <br>
         <input type="text" name="name"> <br><br>
         <label for="age">Umur</label> <br>
         <input type="number" name="age"> <br><br>
         <label for="gender">Jenis Kelamin</label> <br>
-        <input type="radio" name="male">
-        <label for="male">Laki-laki</label> <br>
-        <input type="radio" name="female">
-        <label for="female">Perempuan</label> <br><br>
-        <label for="city">Domisili</label> <br>
-        <select name="city">
-            <option value="default">Pilih kota</option>
-            <option value="jakarta">Jakarta</option>
-            <option value="bandung">Bandung</option>
-            <option value="yogyakarta">Yogyakarta</option>
-            <option value="semarang">Semarang</option>
-            <option value="surabaya">Surabaya</option>
-        </select> <br><br>
-        <label for="aspect">Aspek yang diperhatikan ketika membeli produk</label> <br>
-        <input type="checkbox" name="price">
-        <label for="price">Harga</label> <br>
-        <input type="checkbox" name="quality">
-        <label for="quality">Kualitas produk</label> <br>
-        <input type="checkbox" name="packaging">
-        <label for="packaging">Kemasan</label> <br>
-        <input type="checkbox" name="aftersales">
-        <label for="aftersales">Pelayanan purnajual</label> <br>
-        <input type="checkbox" name="ethic">
-        <label for="ethic">Etika bisnis perusahaan</label> <br><br>
-        <label for="opinion">Pendapat anda mengenai barang yang diproduksi di negara xxx</label> <br>
-        <textarea type="text" name="opinion" cols="50" rows="2"></textarea><br><br>
+        <input type="radio" name="gender" value="Laki-laki">Laki-laki<br>
+        <input type="radio" name="gender" value="Perempuan">Perempuan<br><br>
     </form>
-    <button>Submit</button>
+    <button type="submit" onclick="submitSurvey(event)">Submit</button>
+    <p class="alert" style="display:none;color:red">Data tidak boleh kosong</p>
+    <div>
+        <div id="output" style="display: none;"></div>
+    </div>
 </body>
 </html>
